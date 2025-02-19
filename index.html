@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>  
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #2c3e50, #34495e);
+            text-align: center;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .description {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: #ecf0f1;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+        .headline {
+            font-size: 42px;
+            font-weight: bold;
+            color: #bdc3c7;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            margin-bottom: 20px;
+        }
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="headline">✨ My Portfolio ✨</h1>
+    <div class="gallery">
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image1.jpg?raw=true" alt="Project 1" onclick="openLightbox(this)">
+            <div class="description">Study Table Model</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image2.jpg?raw=true" alt="Project 2" onclick="openLightbox(this)">
+            <div class="description"> House Model</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image3.jpg?raw=true" alt="Project 3" onclick="openLightbox(this)">
+            <div class="description">Still Life Model</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image4.jpg?raw=true" alt="Project 4" onclick="openLightbox(this)">
+            <div class="description">Night Environment</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image5.jpg?raw=true" alt="Project 5" onclick="openLightbox(this)">
+            <div class="description">Film Noir Lighting</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image6.jpg?raw=true" alt="Project 6" onclick="openLightbox(this)">
+            <div class="description">Indoor Night Environment</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image7.jpg?raw=true" alt="Project 7" onclick="openLightbox(this)">
+            <div class="description">AO Pass</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image8.jpg?raw=true" alt="Project 8" onclick="openLightbox(this)">
+            <div class="description">Game Environment</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image9.jpg?raw=true" alt="Project 9" onclick="openLightbox(this)">
+            <div class="description">Haunted Hallway</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image10.jpg?raw=true" alt="Project 10" onclick="openLightbox(this)">
+            <div class="description">Character Pose Happiness</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image11.jpg?raw=true" alt="Project 11" onclick="openLightbox(this)">
+            <div class="description">Ship Deck Lighting</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image12.jpg?raw=true" alt="Project 12" onclick="openLightbox(this)">
+            <div class="description">Character Pose Exhausted</div>
+        </div>
+        <div>
+            <img src="https://github.com/Abhisekmax/Portfolio/blob/main/image13.jpg?raw=true" alt="Project 13" onclick="openLightbox(this)">
+            <div class="description">Museum Lighting</div>
+        </div>
+    </div>
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img">
+    </div>
+    <script>
+        function openLightbox(img) {
+            document.getElementById("lightbox-img").src = img.src;
+            document.getElementById("lightbox").style.display = "flex";
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+    </script>
+</body>
+</html>
